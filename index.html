@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thero, my baba, my love, my king ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>For My Amazing Thero ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
         * {
@@ -16,7 +16,7 @@
         body {
             background-color: #000;
             color: #fff;
-            font-family: 'Pacifico', cursive;
+            font-family: 'Comic Neue', cursive;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,6 +24,7 @@
             align-items: center;
             overflow: hidden;
             position: relative;
+            padding: 20px;
         }
         
         .message-container {
@@ -38,14 +39,16 @@
         }
         
         h1 {
-            font-size: 4rem;
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
             margin-bottom: 2rem;
             color: #ff69b4;
             text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+            line-height: 1.2;
         }
         
         p {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
             color: #fff;
@@ -106,17 +109,24 @@
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             
             p {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             
             .message-container {
                 padding: 1.5rem;
                 margin: 1rem;
             }
+        }
+        
+        .signature {
+            margin-top: 2rem;
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: #ff69b4;
         }
     </style>
 </head>
@@ -125,10 +135,16 @@
     
     <div class="message-container">
         <h1>For My Thero, My Baba, My Love, My King <span class="heart">❤️</span></h1>
+        
         <p>I love you so much, my amazing boyfriend!</p>
-        <p>You mean the world to me and I truly care for you. Im sorry for dragging you yesterday it wasnt my intention. i love and respect you and if you dont feel comfortable with pda ill stop for you i swear.
-        please dont be sad or beat yourself up or be mad at me. i love you.</p>
-        <p>PS i hope this isnt love bombing or too much baba. <span class="heart">❤️</span></p>
+        
+        <p>You mean the world to me and I truly care for you. I'm sorry for dragging you yesterday it wasn't my intention. I love and respect you and if you don't feel comfortable with PDA I'll stop for you I swear.</p>
+        
+        <p>Please don't be sad or beat yourself up or be mad at me. I love you.</p>
+        
+        <p>PS I hope this isn't love bombing or too much baba. <span class="heart">❤️</span></p>
+        
+        <div class="signature">Forever Yours</div>
     </div>
 
     <script>
@@ -172,7 +188,14 @@
         setInterval(shootConfetti, 8000);
         
         // Create floating hearts on load
-        window.onload = createFloatingHearts;
+        window.onload = function() {
+            createFloatingHearts();
+            
+            // Continuous confetti for the first 10 seconds
+            for (let i = 0; i < 10; i++) {
+                setTimeout(shootConfetti, i * 300);
+            }
+        };
         
         // Additional confetti on click
         document.addEventListener('click', function() {
